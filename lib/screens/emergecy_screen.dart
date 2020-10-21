@@ -26,7 +26,7 @@ class Emergency_Screen extends StatelessWidget {
               padding: altura * 0.2 * 0.1,
             ),
             AreaText(
-                text: 'ALERTA', altura: altura * 0.5, largura: largura * 0.3),
+                text: 'ALERTA', altura: altura * 0.05, largura: largura * 0.3),
             Row(
               children: [
                 Expanded(
