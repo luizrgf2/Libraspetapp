@@ -5,13 +5,15 @@ class Button_text extends StatelessWidget {
   final Function function;
   final double altura;
   final double largura;
+  final double altura_text;
   final String text;
 
   Button_text(
       {@required this.function,
       @required this.altura,
       @required this.largura,
-      @required this.text});
+      @required this.text,
+      @required this.altura_text});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,12 @@ class Button_text extends StatelessWidget {
         decoration: BoxDecoration(
             border: Border.all(width: 2),
             borderRadius: BorderRadius.circular(3)),
-        child: AreaText(text: text, altura: altura, largura: largura),
+        child: AreaText(
+          text: text,
+          altura: altura,
+          largura: largura,
+          altura_text: altura_text,
+        ),
       ),
     );
   }
