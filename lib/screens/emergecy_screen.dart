@@ -26,7 +26,7 @@ class Emergency_Screen extends StatelessWidget {
               padding: altura * 0.2 * 0.1,
             ),
             AreaText(
-                text: 'ALERTA', altura: altura * 0.07, largura: largura * 0.3),
+                text: 'ALERTA', altura: altura * 0.5, largura: largura * 0.3),
             Row(
               children: [
                 Expanded(
@@ -80,7 +80,7 @@ class Emergency_Screen extends StatelessWidget {
                           padding: altura * 0.2 * 0.5,
                         ),
                         AreaText(
-                            text: 'QUIETO',
+                            text: 'NÃO SEI DIZER',
                             altura: altura * 0.07,
                             largura: largura * 0.3),
                       ],
@@ -97,9 +97,9 @@ class Emergency_Screen extends StatelessWidget {
                           padding: altura * 0.2 * 0.6,
                         ),
                         AreaText(
-                            text: 'AGITADO',
+                            text: 'NENHUMA DAS OPÇÕES',
                             altura: altura * 0.07,
-                            largura: largura * 0.3),
+                            largura: largura * 0.4),
                       ],
                     ),
                   )
