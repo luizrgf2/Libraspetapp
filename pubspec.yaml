@@ -51,6 +51,12 @@ flutter:
     - lib/assets/images/Imagem3.png
     - lib/assets/images/Imagem4.png
     - lib/assets/images/Imagem5.png
+    - lib/assets/images/Imagem6.png
+    - lib/assets/images/Imagem7.png
+    - lib/assets/images/Imagem8.png
+    - lib/assets/images/Imagem9.png
+    - lib/assets/images/Imagem10.png
+    
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

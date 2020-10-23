@@ -23,7 +23,13 @@ class ImageClick extends StatelessWidget {
           padding: EdgeInsets.only(top: padding),
           height: altura,
           width: largura,
-          child: FlatButton(onPressed: function, child: Image.asset(path)),
+          child: FlatButton(
+              onPressed: function,
+              child: Image.asset(
+                path,
+                fit: BoxFit.fill,
+                scale: 0.7,
+              )),
         ),
       ],
     );
