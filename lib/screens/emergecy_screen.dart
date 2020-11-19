@@ -10,9 +10,9 @@ class Emergency_Screen extends StatelessWidget {
         MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
     final double largura = MediaQuery.of(context).size.width;
 
-    return SafeArea(
-      child: Scaffold(
-        body: Column(
+    return Scaffold(
+      body: SafeArea(
+              child: Column(
           children: [
             AreaText(
                 text: 'COMPORTAMENTO DO ANIMAL',

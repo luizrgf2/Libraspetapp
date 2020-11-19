@@ -14,30 +14,32 @@ class Result_Final_Screen extends StatelessWidget {
     var largura = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          AreaText(
-              text: text_final,
-              altura: altura * 0.1,
-              largura: largura,
-              altura_text: altura * 0.05),
-          Padding(
-            padding:  EdgeInsets.only(right: largura * 0.05,left: largura * 0.05  ),
-            child: AreaText(
-                text: '',
-                altura: altura * 0.5,
+      body: SafeArea(
+              child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            AreaText(
+                text: text_final,
+                altura: altura * 0.1,
                 largura: largura,
                 altura_text: altura * 0.05),
-          ),
-          Column(
-            children: [
-              ImageClick(largura: largura *0.2 , altura: altura*0.12, path: 'lib/assets/images/Imagem39.png', function: (){}, padding: 0),
-              Text('REINICIAR')
-            ],
-          ),
-          
-        ],
+            Padding(
+              padding:  EdgeInsets.only(right: largura * 0.05,left: largura * 0.05  ),
+              child: AreaText(
+                  text: '',
+                  altura: altura * 0.5,
+                  largura: largura,
+                  altura_text: altura * 0.05),
+            ),
+            Column(
+              children: [
+                ImageClick(largura: largura *0.2 , altura: altura*0.12, path: 'lib/assets/images/Imagem39.png', function: (){}, padding: 0),
+                Text('REINICIAR')
+              ],
+            ),
+            
+          ],
+        ),
       ),
     );
   }
