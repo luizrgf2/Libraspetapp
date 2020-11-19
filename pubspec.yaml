@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  path_provider: ^1.6.24
   flutter:
     sdk: flutter
 
@@ -55,6 +56,7 @@ flutter:
     - lib/assets/images/Imagem7.png
     - lib/assets/images/Imagem8.png
     - lib/assets/images/Imagem9.png
+    - lib/assets/images/Imagem10.png
     - lib/assets/images/Imagem11.png
     - lib/assets/images/Imagem12.png
     - lib/assets/images/Imagem13.png
@@ -76,6 +78,21 @@ flutter:
     - lib/assets/images/Imagem29.png
     - lib/assets/images/Imagem30.png
     - lib/assets/images/Imagem31.png
+    - lib/assets/images/Imagem32.png
+    - lib/assets/images/Imagem33.png
+    - lib/assets/images/Imagem34.png
+    - lib/assets/images/Imagem35.png
+    - lib/assets/images/Imagem36.png
+    - lib/assets/images/Imagem37.png
+    - lib/assets/images/Imagem38.png
+    - lib/assets/images/Imagem39.png
+    - lib/assets/images/Imagem40.png
+    - lib/assets/images/Imagem41.png
+    - lib/assets/images/Imagem42.png
+    
+
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

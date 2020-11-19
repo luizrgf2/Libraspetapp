@@ -1,5 +1,10 @@
 import 'package:Libraspet/components/area_text.dart';
 import 'package:Libraspet/components/image_click.dart';
+import 'package:Libraspet/screens/afogado_screen.dart';
+import 'package:Libraspet/screens/atropelado_screen.dart';
+import 'package:Libraspet/screens/briga_screen.dart';
+import 'package:Libraspet/screens/espuma_screen.dart';
+import 'package:Libraspet/screens/mordeu_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,9 +14,9 @@ class HomePage extends StatelessWidget {
         MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
     final double largura = MediaQuery.of(context).size.width;
 
-    return SafeArea(
-      child: Scaffold(
-        body: Column(
+    return Scaffold(
+      body: SafeArea(
+              child: Column(
           children: [
             Padding(
               padding: EdgeInsets.only(bottom: altura * 0.0001),
@@ -32,7 +37,12 @@ class HomePage extends StatelessWidget {
                           largura: largura * 0.5,
                           altura: altura * 0.15,
                           path: 'lib/assets/images/Imagem6.png',
-                          function: () {},
+                          function: () 
+                          {
+
+                            Navigator.push(context, MaterialPageRoute(builder: (ctx)=>Afogador_Screen()));
+
+                          },
                           padding: altura * 0.2 * 0.3,
                         ),
                         AreaText(
@@ -50,7 +60,10 @@ class HomePage extends StatelessWidget {
                           largura: largura * 0.4,
                           altura: altura * 0.15,
                           path: 'lib/assets/images/Imagem7.png',
-                          function: () {},
+                          function: () 
+                          {
+                            Navigator.push(context, MaterialPageRoute(builder: (ctx)=>Atropelado_Screen()));
+                          },
                           padding: altura * 0.2 * 0.3,
                         ),
                         AreaText(
@@ -75,7 +88,10 @@ class HomePage extends StatelessWidget {
                           largura: largura * 0.4,
                           altura: altura * 0.13,
                           path: 'lib/assets/images/Imagem8.png',
-                          function: () {},
+                          function: () 
+                          {
+                            Navigator.push(context, MaterialPageRoute(builder: (ctx)=>Briga_Screen()));
+                          },
                           padding: 0,
                         ),
                         AreaText(
@@ -93,7 +109,10 @@ class HomePage extends StatelessWidget {
                           largura: largura * 0.45,
                           altura: altura * 0.12,
                           path: 'lib/assets/images/Imagem9.png',
-                          function: () {},
+                          function: () 
+                          {
+                            Navigator.push(context, MaterialPageRoute(builder: (ctx)=>Espuma_Screen()));
+                          },
                           padding: altura * 0.02,
                         ),
                         AreaText(
@@ -115,7 +134,10 @@ class HomePage extends StatelessWidget {
                     largura: largura * 0.3,
                     altura: altura * 0.135,
                     path: 'lib/assets/images/Imagem10.png',
-                    function: () {},
+                    function: () 
+                    {
+                      Navigator.push(context, MaterialPageRoute(builder: (ctx)=>Mordeu_Screen()));
+                    },
                     padding: altura * 0.2 * 0.1,
                   ),
                   AreaText(
