@@ -1,6 +1,10 @@
 import 'package:Libraspet/components/area_text.dart';
 import 'package:Libraspet/components/image_click.dart';
+import 'package:Libraspet/screens/cores_coco_screen.dart';
+import 'package:Libraspet/screens/diarreia_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../controller.dart';
 
 class Coco_Screen extends StatelessWidget {
   const Coco_Screen({Key key}) : super(key: key);
@@ -32,7 +36,14 @@ class Coco_Screen extends StatelessWidget {
                         largura: largura * 0.4,
                         altura: altura * 0.2,
                         path: 'lib/assets/images/Imagem26.png',
-                        function: () {},
+                        function: () 
+                        {
+                                                
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) => CocoCores_Screen()));
+                        },
                         padding: 0,
                       ),
                       AreaText(
@@ -48,7 +59,14 @@ class Coco_Screen extends StatelessWidget {
                         largura: largura * 0.4,
                         altura: altura * 0.2,
                         path: 'lib/assets/images/Imagem27.png',
-                        function: () {},
+                        function: () 
+                        {
+                                                
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) => Diarreia_Screen()));
+                        },
                         padding: 0,
                       ),
                       AreaText(
@@ -61,43 +79,31 @@ class Coco_Screen extends StatelessWidget {
                 ],
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  children: [
-                    ImageClick(
-                      largura: largura * 0.3,
-                      altura: altura * 0.2,
-                      path: 'lib/assets/images/Imagem4.png',
-                      function: () {},
-                      padding: altura * 0.2 * 0.5,
+            Padding(
+                      padding: EdgeInsets.only(right: largura * 0.6,bottom: altura * 0.03),
+                      child: Column(
+                        children: [
+                          ImageClick(
+                            largura: largura * 0.3,
+                            altura: altura * 0.2,
+                            path: 'lib/assets/images/Imagem4.png',
+                            function: () {
+                              write_in_file('Não sabe informar consistência das fezes');
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (ctx) => CocoCores_Screen()));
+                            },
+                            padding: altura * 0.2 * 0.5,
+                          ),
+                          AreaText(
+                              text: 'NÃO SEI\n DIZER',
+                              altura: altura * 0.07,
+                              largura: largura * 0.3,
+                              altura_text: altura * 0.004),
+                        ],
+                      ),
                     ),
-                    AreaText(
-                        text: 'NÃO SEI\n DIZER',
-                        altura: altura * 0.07,
-                        largura: largura * 0.3,
-                        altura_text: altura * 0.004),
-                  ],
-                ),
-                Column(
-                  children: [
-                    ImageClick(
-                      largura: largura * 0.4,
-                      altura: altura * 0.2,
-                      path: 'lib/assets/images/Imagem5.png',
-                      function: () {},
-                      padding: altura * 0.2 * 0.6,
-                    ),
-                    AreaText(
-                        text: 'NENHUMA DAS\n OPÇÕES',
-                        altura: altura * 0.07,
-                        largura: largura * 0.4,
-                        altura_text: altura * 0.001),
-                  ],
-                )
-              ],
-            )
           ],
         ),
       ),

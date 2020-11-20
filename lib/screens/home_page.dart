@@ -3,6 +3,7 @@ import 'package:Libraspet/components/image_click.dart';
 import 'package:Libraspet/screens/afogado_screen.dart';
 import 'package:Libraspet/screens/atropelado_screen.dart';
 import 'package:Libraspet/screens/briga_screen.dart';
+import 'package:Libraspet/screens/emergecy_screen.dart';
 import 'package:Libraspet/screens/espuma_screen.dart';
 import 'package:Libraspet/screens/mordeu_screen.dart';
 import 'package:flutter/material.dart';
@@ -148,45 +149,27 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      ImageClick(
-                        largura: largura * 0.3,
-                        altura: altura * 0.2,
-                        path: 'lib/assets/images/Imagem4.png',
-                        function: () {},
-                        padding: altura * 0.1,
-                      ),
-                      AreaText(
-                          text: 'NÃO SEI\n DIZER',
-                          altura: altura * 0.07,
-                          largura: largura * 0.3,
-                          altura_text: altura * 0.004),
-                    ],
+            Padding(
+              padding:  EdgeInsets.only(left: largura* 0.5,top: altura*0.04),
+              child: Column(
+                children: [
+                  ImageClick(
+                    largura: largura * 0.2,
+                    altura: altura * 0.14,
+                    path: 'lib/assets/images/Imagem5.png',
+                    function: () 
+                    {
+                      Navigator.push(context, MaterialPageRoute(builder: (ctx)=>Emergency_Screen()));
+                    },
+                    padding: largura*0.07,
                   ),
-                ),
-                Expanded(
-                  child: Column(
-                    children: [
-                      ImageClick(
-                        largura: largura * 0.4,
-                        altura: altura * 0.2,
-                        path: 'lib/assets/images/Imagem5.png',
-                        function: () {},
-                        padding: altura * 0.2 * 0.6,
-                      ),
-                      AreaText(
-                          text: 'NENHUMA DAS\n OPÇÕES',
-                          altura: altura * 0.07,
-                          largura: largura * 0.4,
-                          altura_text: altura * 0.001),
-                    ],
-                  ),
-                )
-              ],
+                  AreaText(
+                      text: 'NENHUMA \nDAS OPÇÕES',
+                      altura: altura * 0.07,
+                      largura: largura * 0.3,
+                      altura_text: altura * 0.004),
+                ],
+              ),
             ),
           ],
         ),

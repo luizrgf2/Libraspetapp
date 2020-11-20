@@ -1,6 +1,12 @@
 import 'package:Libraspet/components/area_text.dart';
 import 'package:Libraspet/components/image_click.dart';
+import 'package:Libraspet/screens/coco_preto_screen.dart';
+import 'package:Libraspet/screens/coco_vermelho_screen.dart';
+import 'package:Libraspet/screens/coco_vermes_screen.dart';
+import 'package:Libraspet/screens/xixi_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../controller.dart';
 
 class CocoCores_Screen extends StatelessWidget {
   @override
@@ -28,7 +34,14 @@ class CocoCores_Screen extends StatelessWidget {
                       largura: largura * 0.4,
                       altura: altura * 0.2,
                       path: 'lib/assets/images/Imagem28.png',
-                      function: () {},
+                      function: () 
+                      {
+                                                     
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (ctx) => Xixi_Screens()));
+                      },
                       padding: 0,
                     ),
                     AreaText(
@@ -44,7 +57,14 @@ class CocoCores_Screen extends StatelessWidget {
                       largura: largura * 0.4,
                       altura: altura * 0.2,
                       path: 'lib/assets/images/Imagem29.png',
-                      function: () {},
+                      function: () 
+                      {
+                                                     
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (ctx) => Cocopreto_Screen()));
+                      },
                       padding: 0,
                     ),
                     AreaText(
@@ -65,7 +85,14 @@ class CocoCores_Screen extends StatelessWidget {
                       largura: largura * 0.4,
                       altura: altura * 0.2,
                       path: 'lib/assets/images/Imagem30.png',
-                      function: () {},
+                      function: () 
+                      {
+                                                     
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (ctx) => Cocovermelho_Screen()));
+                      },
                       padding: 0,
                     ),
                     AreaText(
@@ -81,7 +108,14 @@ class CocoCores_Screen extends StatelessWidget {
                       largura: largura * 0.4,
                       altura: altura * 0.2,
                       path: 'lib/assets/images/Imagem31.png',
-                      function: () {},
+                      function: () 
+                      {
+                                                    
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (ctx) => Cocovermes_Screen()));
+                      },
                       padding: 0,
                     ),
                     AreaText(
@@ -93,43 +127,57 @@ class CocoCores_Screen extends StatelessWidget {
                 )
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
+             Padding(
+               padding:  EdgeInsets.only(bottom: altura * 0.03),
+               child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    ImageClick(
-                      largura: largura * 0.3,
-                      altura: altura * 0.2,
-                      path: 'lib/assets/images/Imagem4.png',
-                      function: () {},
-                      padding: altura * 0.2 * 0.5,
+                    Column(
+                      children: [
+                        ImageClick(
+                          largura: largura * 0.3,
+                          altura: altura * 0.2,
+                          path: 'lib/assets/images/Imagem4.png',
+                          function: () {
+                            write_in_file('Não sabe informar a característica');
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (ctx) => Xixi_Screens()));
+                          },
+                          padding: altura * 0.2 * 0.5,
+                        ),
+                        AreaText(
+                            text: 'NÃO SEI\n DIZER',
+                            altura: altura * 0.07,
+                            largura: largura * 0.3,
+                            altura_text: altura * 0.004),
+                      ],
                     ),
-                    AreaText(
-                        text: 'NÃO SEI\n DIZER',
-                        altura: altura * 0.07,
-                        largura: largura * 0.3,
-                        altura_text: altura * 0.004),
+                    Column(
+                      children: [
+                        ImageClick(
+                          largura: largura * 0.4,
+                          altura: altura * 0.2,
+                          path: 'lib/assets/images/Imagem5.png',
+                          function: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (ctx) => Xixi_Screens()));
+                          },
+                          padding: altura * 0.2 * 0.6,
+                        ),
+                        AreaText(
+                            text: 'NENHUMA DAS\n OPÇÕES',
+                            altura: altura * 0.07,
+                            largura: largura * 0.4,
+                            altura_text: altura * 0.001),
+                      ],
+                    )
                   ],
                 ),
-                Column(
-                  children: [
-                    ImageClick(
-                      largura: largura * 0.4,
-                      altura: altura * 0.2,
-                      path: 'lib/assets/images/Imagem5.png',
-                      function: () {},
-                      padding: altura * 0.2 * 0.6,
-                    ),
-                    AreaText(
-                        text: 'NENHUMA DAS\n OPÇÕES',
-                        altura: altura * 0.07,
-                        largura: largura * 0.4,
-                        altura_text: altura * 0.001),
-                  ],
-                )
-              ],
-            )
+             ),
           ],
         ),
       ),

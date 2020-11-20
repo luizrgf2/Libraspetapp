@@ -1,7 +1,13 @@
+import 'package:Libraspet/screens/agitated_screen.dart';
+import 'package:Libraspet/screens/alert_screen.dart';
+import 'package:Libraspet/screens/quiet_screen.dart';
+import 'package:Libraspet/screens/veneno_screen.dart';
+
 import '../components/image_click.dart';
 import 'package:flutter/material.dart';
 import '../components/area_text.dart';
 import '../components/image_click.dart';
+import '../controller.dart';
 
 class Emergency_Screen extends StatelessWidget {
   @override
@@ -12,7 +18,7 @@ class Emergency_Screen extends StatelessWidget {
 
     return Scaffold(
       body: SafeArea(
-              child: Column(
+        child: Column(
           children: [
             AreaText(
                 text: 'COMPORTAMENTO DO ANIMAL',
@@ -23,7 +29,10 @@ class Emergency_Screen extends StatelessWidget {
               largura: largura * 0.4,
               altura: altura * 0.2,
               path: 'lib/assets/images/Imagem1.png',
-              function: () {},
+              function: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (ctx) => Alert_Screen()));
+              },
               padding: altura * 0.2 * 0.1,
             ),
             AreaText(
@@ -40,7 +49,12 @@ class Emergency_Screen extends StatelessWidget {
                         largura: largura * 0.4,
                         altura: altura * 0.2,
                         path: 'lib/assets/images/Imagem2.png',
-                        function: () {},
+                        function: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (ctx) => Quiet_Screen()));
+                        },
                         padding: altura * 0.2 * 0.1,
                       ),
                       AreaText(
@@ -58,7 +72,12 @@ class Emergency_Screen extends StatelessWidget {
                         largura: largura * 0.4,
                         altura: altura * 0.2,
                         path: 'lib/assets/images/Imagem3.png',
-                        function: () {},
+                        function: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (ctx) => Agited_Screen()));
+                        },
                         padding: altura * 0.2 * 0.1,
                       ),
                       AreaText(
@@ -82,7 +101,13 @@ class Emergency_Screen extends StatelessWidget {
                           largura: largura * 0.3,
                           altura: altura * 0.2,
                           path: 'lib/assets/images/Imagem4.png',
-                          function: () {},
+                          function: () {
+                            write_in_file('Não sabe informar o comportamento do animal');
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (ctx) => Veneno_Screens()));
+                          },
                           padding: altura * 0.2 * 0.5,
                         ),
                         AreaText(
@@ -100,7 +125,12 @@ class Emergency_Screen extends StatelessWidget {
                           largura: largura * 0.4,
                           altura: altura * 0.2,
                           path: 'lib/assets/images/Imagem5.png',
-                          function: () {},
+                          function: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (ctx) => Veneno_Screens()));
+                          },
                           padding: altura * 0.2 * 0.6,
                         ),
                         AreaText(

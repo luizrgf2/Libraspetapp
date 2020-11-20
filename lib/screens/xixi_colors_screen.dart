@@ -1,6 +1,11 @@
+import 'package:Libraspet/screens/febre_screen.dart';
+import 'package:Libraspet/screens/xixi_amarelo_screen.dart';
+import 'package:Libraspet/screens/xixi_trans_screen.dart';
+import 'package:Libraspet/screens/xixi_vermelho_screen.dart';
 import 'package:flutter/material.dart';
 import '../components/image_click.dart';
 import '../components/area_text.dart';
+import '../controller.dart';
 
 class Xixi_Color_Screens extends StatelessWidget {
   @override
@@ -39,7 +44,14 @@ class Xixi_Color_Screens extends StatelessWidget {
                         largura: largura * 0.4,
                         altura: altura * 0.2,
                         path: 'lib/assets/images/Imagem35.png',
-                        function: () {},
+                        function: () 
+                        {
+                                                
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (ctx) => Xixi_Trans_Screen()));
+                        },
                         padding: 0,
                       ),
                       AreaText(
@@ -57,7 +69,13 @@ class Xixi_Color_Screens extends StatelessWidget {
                         largura: largura * 0.4,
                         altura: altura * 0.2,
                         path: 'lib/assets/images/Imagem36.png',
-                        function: () {},
+                        function: () 
+                        {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (ctx) => Xixi_Amarelo_Screen()));
+                        },
                         padding: 0,
                       ),
                       AreaText(
@@ -75,7 +93,13 @@ class Xixi_Color_Screens extends StatelessWidget {
                         largura: largura * 0.4,
                         altura: altura * 0.2,
                         path: 'lib/assets/images/Imagem37.png',
-                        function: () {},
+                        function: () 
+                        {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (ctx) => Xixi_Vermelho_Screen()));
+                        },
                         padding: 0,
                       ),
                       AreaText(
@@ -88,42 +112,59 @@ class Xixi_Color_Screens extends StatelessWidget {
                 )
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  children: [
-                    ImageClick(
-                      largura: largura * 0.3,
-                      altura: altura * 0.2,
-                      path: 'lib/assets/images/Imagem4.png',
-                      function: () {},
-                      padding: altura * 0.2 * 0.5,
-                    ),
-                    AreaText(
-                        text: 'NÃO SEI\n DIZER',
-                        altura: altura * 0.07,
+            Padding(
+              padding:  EdgeInsets.only(bottom: altura * 0.03),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    children: [
+                      ImageClick(
                         largura: largura * 0.3,
-                        altura_text: altura * 0.004),
-                  ],
-                ),
-                Column(
-                  children: [
-                    ImageClick(
-                      largura: largura * 0.4,
-                      altura: altura * 0.2,
-                      path: 'lib/assets/images/Imagem5.png',
-                      function: () {},
-                      padding: altura * 0.2 * 0.6,
-                    ),
-                    AreaText(
-                        text: 'NENHUMA DAS\n OPÇÕES',
-                        altura: altura * 0.07,
+                        altura: altura * 0.2,
+                        path: 'lib/assets/images/Imagem4.png',
+                        function: () 
+                        {
+                                                  
+                              write_in_file('Não sabe informar a cor da urina');
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (ctx) => Febre_Screens()));
+                        },
+                        padding: altura * 0.2 * 0.5,
+                      ),
+                      AreaText(
+                          text: 'NÃO SEI\n DIZER',
+                          altura: altura * 0.07,
+                          largura: largura * 0.3,
+                          altura_text: altura * 0.004),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      ImageClick(
                         largura: largura * 0.4,
-                        altura_text: altura * 0.001),
-                  ],
-                ),
-              ],
+                        altura: altura * 0.2,
+                        path: 'lib/assets/images/Imagem5.png',
+                        function: () 
+                        {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (ctx) => Febre_Screens()));
+                        },
+                        padding: altura * 0.2 * 0.6,
+                      ),
+                      AreaText(
+                          text: 'NENHUMA DAS\n OPÇÕES',
+                          altura: altura * 0.07,
+                          largura: largura * 0.4,
+                          altura_text: altura * 0.001),
+                    ],
+                  ),
+                ],
+              ),
             )
           ],
         ),

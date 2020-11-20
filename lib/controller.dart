@@ -38,6 +38,12 @@ void write_in_file(String text) async{
 
   String text_in_file = await read_file();
   io.File file = await create_file();
-  file.writeAsStringSync(text_in_file+text+',');
+  file.writeAsStringSync(text_in_file+text+'\n');
+
+}
+void delete_file()async {
+
+  io.File file = await create_file();
+  file.deleteSync();
 
 }

@@ -1,6 +1,10 @@
+import 'package:Libraspet/screens/xixi_colors_screen.dart';
+import 'package:Libraspet/screens/xixi_muito_screen.dart';
+import 'package:Libraspet/screens/xixi_pouco_screen.dart';
 import 'package:flutter/material.dart';
 import '../components/image_click.dart';
 import '../components/area_text.dart';
+import '../controller.dart';
 
 class Xixi_Screens extends StatelessWidget {
   @override
@@ -38,7 +42,14 @@ class Xixi_Screens extends StatelessWidget {
                       largura: largura * 0.4,
                       altura: altura * 0.2,
                       path: 'lib/assets/images/Imagem33.png',
-                      function: () {},
+                      function: () 
+                      {
+                                                     
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (ctx) => Xixi_Muito_Screen()));
+                      },
                       padding: 0,
                     ),
                     AreaText(
@@ -54,7 +65,14 @@ class Xixi_Screens extends StatelessWidget {
                       largura: largura * 0.4,
                       altura: altura * 0.2,
                       path: 'lib/assets/images/Imagem34.png',
-                      function: () {},
+                      function: () 
+                      {
+                                                      
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (ctx) => Xixi_Pouco_Screen()));
+                      },
                       padding: 0,
                     ),
                     AreaText(
@@ -66,42 +84,59 @@ class Xixi_Screens extends StatelessWidget {
                 )
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  children: [
-                    ImageClick(
-                      largura: largura * 0.3,
-                      altura: altura * 0.2,
-                      path: 'lib/assets/images/Imagem4.png',
-                      function: () {},
-                      padding: altura * 0.2 * 0.5,
-                    ),
-                    AreaText(
-                        text: 'NÃO SEI\n DIZER',
-                        altura: altura * 0.07,
+            Padding(
+              padding:  EdgeInsets.only(bottom: altura*0.03),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    children: [
+                      ImageClick(
                         largura: largura * 0.3,
-                        altura_text: altura * 0.004),
-                  ],
-                ),
-                Column(
-                  children: [
-                    ImageClick(
-                      largura: largura * 0.4,
-                      altura: altura * 0.2,
-                      path: 'lib/assets/images/Imagem5.png',
-                      function: () {},
-                      padding: altura * 0.2 * 0.6,
-                    ),
-                    AreaText(
-                        text: 'NENHUMA DAS\n OPÇÕES',
-                        altura: altura * 0.07,
+                        altura: altura * 0.2,
+                        path: 'lib/assets/images/Imagem4.png',
+                        function: () 
+                        {
+                                                        write_in_file('Não sabe informar volume da micção');
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (ctx) => Xixi_Color_Screens()));
+                        },
+                        padding: altura * 0.2 * 0.5,
+                      ),
+                      AreaText(
+                          text: 'NÃO SEI\n DIZER',
+                          altura: altura * 0.07,
+                          largura: largura * 0.3,
+                          altura_text: altura * 0.004),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      ImageClick(
                         largura: largura * 0.4,
-                        altura_text: altura * 0.001),
-                  ],
-                )
-              ],
+                        altura: altura * 0.2,
+                        path: 'lib/assets/images/Imagem5.png',
+                        function: () 
+                        {
+                                                       
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (ctx) => Xixi_Color_Screens()));
+                        },
+                        padding: altura * 0.2 * 0.6,
+                      ),
+                      AreaText(
+                          text: 'NENHUMA DAS\n OPÇÕES',
+                          altura: altura * 0.07,
+                          largura: largura * 0.4,
+                          altura_text: altura * 0.001),
+                    ],
+                  )
+                ],
+              ),
             )
           ],
         ),

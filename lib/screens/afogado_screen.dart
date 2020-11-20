@@ -1,9 +1,12 @@
 import 'package:Libraspet/components/area_text.dart';
+import 'package:Libraspet/screens/emergecy_screen.dart';
 import '../components/image_click.dart';
 import 'package:flutter/material.dart';
 import '../components/button_text.dart';
+import '../controller.dart';
 
 class Afogador_Screen extends StatelessWidget {
+  String text_complete;
   @override
   Widget build(BuildContext context) {
     final double altura =
@@ -11,94 +14,120 @@ class Afogador_Screen extends StatelessWidget {
     final double largura = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
-              child: Column(
-    children: [
-        AreaText(
-            text: 'EMERGÊNCIAS',
-            altura: altura * 0.1,
-            largura: largura,
-            altura_text: altura * 0.05),
-        ImageClick(
-          largura: largura * 0.8,
-          altura: altura * 0.35,
-          path: 'lib/assets/images/Imagem6.png',
-          function: null,
-          padding: 0,
-        ),
-        AreaText(
-            text: 'AFOGADO',
-            altura: altura * 0.07,
-            largura: largura * 0.3,
-            altura_text: altura * 0.004),
-        SizedBox(
-          height: altura * 0.01,
-        ),
-        AreaText(
-            text: 'QUANDO?',
-            altura: altura * 0.07,
-            largura: largura * 0.3,
-            altura_text: altura * 0.01),
-        SizedBox(
-          height: altura * 0.01,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Column(
           children: [
-            Expanded(
-              child: Button_text(
-                  altura_text: largura * 0.05,
-                  function: () {},
-                  altura: altura * 0.09,
-                  largura: largura * 0.3,
-                  text: 'HOJE'),
+            AreaText(
+                text: 'EMERGÊNCIAS',
+                altura: altura * 0.1,
+                largura: largura,
+                altura_text: altura * 0.05),
+            ImageClick(
+              largura: largura * 0.8,
+              altura: altura * 0.35,
+              path: 'lib/assets/images/Imagem6.png',
+              function: null,
+              padding: 0,
             ),
-            Expanded(
-              child: Button_text(
-                  altura_text: largura * 0.065,
-                  function: () {},
-                  altura: altura * 0.09,
-                  largura: largura * 0.3,
-                  text: 'DIAS'),
+            AreaText(
+                text: 'AFOGADO',
+                altura: altura * 0.07,
+                largura: largura * 0.3,
+                altura_text: altura * 0.004),
+            SizedBox(
+              height: altura * 0.01,
             ),
-            Expanded(
-              child: Button_text(
-                  altura_text: altura * 0.001,
-                  function: () {},
-                  altura: altura * 0.09,
-                  largura: largura * 0.3,
-                  text: 'SEMANAS'),
+            AreaText(
+                text: 'QUANDO?',
+                altura: altura * 0.07,
+                largura: largura * 0.3,
+                altura_text: altura * 0.01),
+            SizedBox(
+              height: altura * 0.01,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Button_text(
+                      altura_text: largura * 0.05,
+                      function: () {
+                        //se apertar o botao hojee
+                        write_in_file('Afogou hoje');
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (ctx) => Emergency_Screen()));
+                      },
+                      altura: altura * 0.09,
+                      largura: largura * 0.3,
+                      text: 'HOJE'),
+                ),
+                Expanded(
+                  child: Button_text(
+                      altura_text: largura * 0.065,
+                      function: () {
+                        write_in_file('Afogou há dias');
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (ctx) => Emergency_Screen()));
+                      },
+                      altura: altura * 0.09,
+                      largura: largura * 0.3,
+                      text: 'DIAS'),
+                ),
+                Expanded(
+                  child: Button_text(
+                      altura_text: altura * 0.001,
+                      function: () {
+                        write_in_file('Afogou há semanas');
+                        print(read_file());
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (ctx) => Emergency_Screen()));
+                      },
+                      altura: altura * 0.09,
+                      largura: largura * 0.3,
+                      text: 'SEMANAS'),
+                )
+              ],
+            ),
+            Container(
+              //padding: EdgeInsets.only(bottom: 2),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.only(right: largura * 0.6),
+                      child: Column(
+                        children: [
+                          ImageClick(
+                            largura: largura * 0.3,
+                            altura: altura * 0.2,
+                            path: 'lib/assets/images/Imagem4.png',
+                            function: () {
+                              write_in_file('Não sabe informar quando ocorreu');
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (ctx) => Emergency_Screen()));
+                            },
+                            padding: altura * 0.2 * 0.5,
+                          ),
+                          AreaText(
+                              text: 'NÃO SEI\n DIZER',
+                              altura: altura * 0.07,
+                              largura: largura * 0.3,
+                              altura_text: altura * 0.004),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             )
           ],
-        ),
-        Container(
-          //padding: EdgeInsets.only(bottom: 2),
-          child: Row(
-            children: [
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsets.only(right: largura * 0.6),
-                  child: Column(
-                    children: [
-                      ImageClick(
-                        largura: largura * 0.3,
-                        altura: altura * 0.2,
-                        path: 'lib/assets/images/Imagem4.png',
-                        function: () {},
-                        padding: altura * 0.2 * 0.5,
-                      ),
-                      AreaText(
-                          text: 'NÃO SEI\n DIZER',
-                          altura: altura * 0.07,
-                          largura: largura * 0.3,
-                          altura_text: altura * 0.004),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        )
-    ],
         ),
       ),
     );

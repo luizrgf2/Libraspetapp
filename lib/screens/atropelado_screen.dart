@@ -1,7 +1,10 @@
 import 'package:Libraspet/components/area_text.dart';
+import 'package:Libraspet/screens/emergecy_screen.dart';
+import 'package:Libraspet/screens/veneno_screen.dart';
 import '../components/image_click.dart';
 import 'package:flutter/material.dart';
 import '../components/button_text.dart';
+import '../controller.dart';
 
 class Atropelado_Screen extends StatelessWidget {
   @override
@@ -47,7 +50,14 @@ Row(
             Expanded(
               child: Button_text(
                   altura_text: largura * 0.05,
-                  function: () {},
+                  function: () 
+                  {
+                        write_in_file('Atropelado hoje');
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (ctx) => Emergency_Screen()));
+                  },
                   altura: altura * 0.09,
                   largura: largura * 0.3,
                   text: 'HOJE'),
@@ -55,7 +65,16 @@ Row(
             Expanded(
               child: Button_text(
                   altura_text: largura * 0.065,
-                  function: () {},
+                  function: () 
+                  {
+
+                        write_in_file('Atropelado há dias');
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (ctx) => Emergency_Screen()));
+
+                  },
                   altura: altura * 0.09,
                   largura: largura * 0.3,
                   text: 'DIAS'),
@@ -63,7 +82,14 @@ Row(
             Expanded(
               child: Button_text(
                   altura_text: altura * 0.001,
-                  function: () {},
+                  function: () 
+                  {
+                        write_in_file('Atropelado há semanas');
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (ctx) => Emergency_Screen()));
+                  },
                   altura: altura * 0.09,
                   largura: largura * 0.3,
                   text: 'SEMANAS'),
@@ -83,7 +109,14 @@ Row(
                         largura: largura * 0.3,
                         altura: altura * 0.2,
                         path: 'lib/assets/images/Imagem4.png',
-                        function: () {},
+                        function: () 
+                        {
+                        write_in_file('Não sabe informar quando ocorreu');
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (ctx) => Emergency_Screen()));
+                        },
                         padding: altura * 0.2 * 0.5,
                       ),
                       AreaText(

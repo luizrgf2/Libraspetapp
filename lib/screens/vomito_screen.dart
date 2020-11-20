@@ -1,6 +1,9 @@
+import 'package:Libraspet/screens/secrecao_nasal_screen.dart';
+import 'package:Libraspet/screens/tempo_vomito_screen.dart';
 import 'package:flutter/material.dart';
 import '../components/image_click.dart';
 import '../components/area_text.dart';
+import '../controller.dart';
 
 class Vomito_Screens extends StatelessWidget {
   @override
@@ -11,7 +14,7 @@ class Vomito_Screens extends StatelessWidget {
 
     return Scaffold(
       body: SafeArea(
-              child: Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             AreaText(
@@ -38,7 +41,14 @@ class Vomito_Screens extends StatelessWidget {
                       largura: largura * 0.4,
                       altura: altura * 0.2,
                       path: 'lib/assets/images/Imagem20.png',
-                      function: () {},
+                      function: () 
+                      {
+                        
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (ctx) => TempoVomito_Screen()));
+                      },
                       padding: 0,
                     ),
                   ],
@@ -49,50 +59,46 @@ class Vomito_Screens extends StatelessWidget {
                       largura: largura * 0.4,
                       altura: altura * 0.2,
                       path: 'lib/assets/images/Imagem21.png',
-                      function: () {},
+                      function: () 
+                      {
+                                                                                                     write_in_file('Não sabe informar a frequência');
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (ctx) => Secrecao_screen()));
+                      },
                       padding: 0,
                     ),
                   ],
                 )
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  children: [
-                    ImageClick(
+            Padding(
+              padding:
+                  EdgeInsets.only(right: largura * 0.6, bottom: altura * 0.03),
+              child: Column(
+                children: [
+                  ImageClick(
+                    largura: largura * 0.3,
+                    altura: altura * 0.2,
+                    path: 'lib/assets/images/Imagem4.png',
+                    function: () {
+                      write_in_file('Não sabe informar se houve vômito');
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) => Secrecao_screen()));
+                    },
+                    padding: altura * 0.2 * 0.5,
+                  ),
+                  AreaText(
+                      text: 'NÃO SEI\n DIZER',
+                      altura: altura * 0.07,
                       largura: largura * 0.3,
-                      altura: altura * 0.2,
-                      path: 'lib/assets/images/Imagem4.png',
-                      function: () {},
-                      padding: altura * 0.2 * 0.5,
-                    ),
-                    AreaText(
-                        text: 'NÃO SEI\n DIZER',
-                        altura: altura * 0.07,
-                        largura: largura * 0.3,
-                        altura_text: altura * 0.004),
-                  ],
-                ),
-                Column(
-                  children: [
-                    ImageClick(
-                      largura: largura * 0.4,
-                      altura: altura * 0.2,
-                      path: 'lib/assets/images/Imagem5.png',
-                      function: () {},
-                      padding: altura * 0.2 * 0.6,
-                    ),
-                    AreaText(
-                        text: 'NENHUMA DAS\n OPÇÕES',
-                        altura: altura * 0.07,
-                        largura: largura * 0.4,
-                        altura_text: altura * 0.001),
-                  ],
-                )
-              ],
-            )
+                      altura_text: altura * 0.004),
+                ],
+              ),
+            ),
           ],
         ),
       ),

@@ -2,6 +2,8 @@ import 'package:Libraspet/components/area_text.dart';
 import '../components/image_click.dart';
 import 'package:flutter/material.dart';
 import '../components/button_text.dart';
+import '../controller.dart';
+import 'coco_screen.dart';
 
 class SecreTrans_Screen extends StatelessWidget {
   @override
@@ -47,7 +49,14 @@ class SecreTrans_Screen extends StatelessWidget {
             Expanded(
               child: Button_text(
                   altura_text: altura * 0.035,
-                  function: () {},
+                  function: () 
+                  {
+                                          write_in_file('Secreção nasal transparente hoje');
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) => Coco_Screen()));
+                  },
                   altura: altura * 0.09,
                   largura: largura * 0.3,
                   text: 'HOJE'),
@@ -55,7 +64,14 @@ class SecreTrans_Screen extends StatelessWidget {
             Expanded(
               child: Button_text(
                   altura_text: altura * 0.035,
-                  function: () {},
+                  function: () 
+                  {
+                                          write_in_file('Secreção nasal transparente há dias');
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) => Coco_Screen()));
+                  },
                   altura: altura * 0.09,
                   largura: largura * 0.3,
                   text: 'DIAS'),
@@ -63,7 +79,14 @@ class SecreTrans_Screen extends StatelessWidget {
             Expanded(
               child: Button_text(
                   altura_text: altura * 0.001,
-                  function: () {},
+                  function: () 
+                  {
+                                          write_in_file('Secreção nasal transparente há semanas');
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) => Coco_Screen()));
+                  },
                   altura: altura * 0.09,
                   largura: largura * 0.3,
                   text: 'SEMANAS'),
@@ -83,7 +106,14 @@ class SecreTrans_Screen extends StatelessWidget {
                         largura: largura * 0.3,
                         altura: altura * 0.2,
                         path: 'lib/assets/images/Imagem4.png',
-                        function: () {},
+                        function: () 
+                        {
+                                                write_in_file('Não sabe informar quando ocorreu');
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) => Coco_Screen()));
+                        },
                         padding: altura * 0.2 * 0.5,
                       ),
                       AreaText(
