@@ -19,8 +19,12 @@ version: 1.0.0+1
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
-
+flutter_icons:    
+  android: true   
+  ios: true    
+  image_path: "lib/assets/icons/icon.jpg"   
 dependencies:
+  flutter_launcher_icons: ^0.8.1 
   path_provider: ^1.6.24
   flutter:
     sdk: flutter
