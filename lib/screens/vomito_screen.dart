@@ -41,9 +41,7 @@ class Vomito_Screens extends StatelessWidget {
                       largura: largura * 0.4,
                       altura: altura * 0.2,
                       path: 'lib/assets/images/Imagem20.png',
-                      function: () 
-                      {
-                        
+                      function: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -59,13 +57,12 @@ class Vomito_Screens extends StatelessWidget {
                       largura: largura * 0.4,
                       altura: altura * 0.2,
                       path: 'lib/assets/images/Imagem21.png',
-                      function: () 
-                      {
-                                                                                                     write_in_file('Não sabe informar a frequência');
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (ctx) => Secrecao_screen()));
+                      function: () {
+                        write_in_file('Não sabe informar quando ocorreu');
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (ctx) => Secrecao_screen()));
                       },
                       padding: 0,
                     ),
