@@ -4,6 +4,7 @@ import '../components/image_click.dart';
 import 'package:flutter/material.dart';
 import '../components/button_text.dart';
 import '../controller.dart';
+import 'febre_screen.dart';
 
 class Xixi_Amarelo_Screen extends StatelessWidget {
   String text_final;
@@ -52,13 +53,11 @@ class Xixi_Amarelo_Screen extends StatelessWidget {
                       altura_text: altura * 0.035,
                       function: () async {
                         write_in_file('Xixi amarelo hoje');
-                        text_final = await read_file();
+
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (ctx) => Result_Final_Screen(
-                                      text_final: text_final,
-                                    )));
+                                builder: (ctx) => Febre_Screens()));
                       },
                       altura: altura * 0.09,
                       largura: largura * 0.3,
@@ -73,9 +72,7 @@ class Xixi_Amarelo_Screen extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (ctx) => Result_Final_Screen(
-                                      text_final: text_final,
-                                    )));
+                                builder: (ctx) => Febre_Screens()));
                       },
                       altura: altura * 0.09,
                       largura: largura * 0.3,
@@ -90,9 +87,7 @@ class Xixi_Amarelo_Screen extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (ctx) => Result_Final_Screen(
-                                      text_final: text_final,
-                                    )));
+                                builder: (ctx) => Febre_Screens()));
                       },
                       altura: altura * 0.09,
                       largura: largura * 0.3,

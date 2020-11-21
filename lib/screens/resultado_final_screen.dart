@@ -33,7 +33,8 @@ class Result_Final_Screen extends StatelessWidget {
                   child: SingleChildScrollView(
                     child: Text(
                       text_final,
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: altura * 0.02),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -47,10 +48,12 @@ class Result_Final_Screen extends StatelessWidget {
                     largura: largura * 0.2,
                     altura: altura * 0.12,
                     path: 'lib/assets/images/Imagem39.png',
-                    function: () 
-                    {
+                    function: () {
                       delete_file();
-                      Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>Home_Screen()), (Route<dynamic> route) => false);
+                      Navigator.of(context).pushAndRemoveUntil(
+                          MaterialPageRoute(
+                              builder: (context) => Home_Screen()),
+                          (Route<dynamic> route) => false);
                     },
                     padding: 0),
                 Text('REINICIAR')
